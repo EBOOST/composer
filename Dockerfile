@@ -1,5 +1,9 @@
-FROM node
+FROM eboost/php7fpm
 
-RUN npm install apidoc -g
+RUN docker-php-ext-install zip
 
-CMD ["apidoc"]
+# Install modules
+RUN apt-get update && apt-get install -y git
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+CMD ["composer"]

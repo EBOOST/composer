@@ -1,2 +1,2 @@
 # composer
-Docker apidocjs
+Docker PHP7 with composer
